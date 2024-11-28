@@ -21,6 +21,7 @@ import menuItemStyles from '@core/styles/vertical/menuItemStyles'
 import menuSectionStyles from '@core/styles/vertical/menuSectionStyles'
 import { GenerateVerticalMenu } from '@/components/GenerateMenu'
 import menuData from '@/data/navigation/verticalMenuData';
+
 //import verticalMenuData from '@/data/navigation/verticalMenuData'
 
 type RenderExpandIconProps = {
