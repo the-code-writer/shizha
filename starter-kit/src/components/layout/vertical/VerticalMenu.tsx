@@ -8,7 +8,7 @@ import PerfectScrollbar from 'react-perfect-scrollbar'
 import type { VerticalMenuContextProps } from '@menu/components/vertical-menu/Menu'
 
 // Component Imports
-import { Menu, MenuItem } from '@menu/vertical-menu'
+import { Menu,  } from '@menu/vertical-menu'; //MenuItem
 
 // Hook Imports
 import useVerticalNav from '@menu/hooks/useVerticalNav'
