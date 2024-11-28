@@ -72,7 +72,7 @@ const VerticalMenu = ({ scrollMenu }: Props) => {
         renderExpandedMenuItemIcon={{ icon: <i className='tabler-circle text-xs' /> }}
         menuSectionStyles={menuSectionStyles(verticalNavOptions, theme)}
       >
-        <GenerateVerticalMenu menuData={menuData(verticalMenuData)} />
+        <GenerateVerticalMenu menuData={menuData()} />
       </Menu>
     </ScrollWrapper>
   )
