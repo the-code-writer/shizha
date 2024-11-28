@@ -1,5 +1,7 @@
 "use strict";
+
 exports.__esModule = true;
+
 var horizontalMenuData = function () { return [
     {
         label: 'Home',
