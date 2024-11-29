@@ -114,7 +114,10 @@ const LoginV2 = ({ mode }: { mode: SystemMode }) => {
         <div className='flex flex-col gap-6 is-full sm:is-auto md:is-full sm:max-is-[400px] md:max-is-[unset] mbs-11 sm:mbs-14 md:mbs-0'>
           <br />
           <div style={{ textAlign: 'center', width: '100%', display: 'block' }}>
-            <img style={{ maxWidth: 300, width: "100%", margin: 'auto' }} src='http://www.zim.gov.zw/images/coatofarms.png' />
+            <img
+              style={{ maxWidth: 300, width: '100%', margin: 'auto' }}
+              src='http://www.zim.gov.zw/images/coatofarms.png'
+            />
             <br />
             MINISTRY OF LANDS, AGRICULTURE, FISHERIES, WATER AND RURAL DEVELOPMENT
             <br />
@@ -181,13 +184,23 @@ const LoginV2 = ({ mode }: { mode: SystemMode }) => {
             </div>
           </form>
           <br />
-          <div style={{ textAlign: 'center', width: '100%', display: 'block' }}>
-            Supported By
-            <br />
-            <img
-              style={{ width: 100, margin: 'auto' }}
-              src='https://scontent-jnb2-1.xx.fbcdn.net/v/t1.6435-9/120351854_4723437567666322_5849636042101530311_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=2285d6&_nc_ohc=CzBJ2b6dydwQ7kNvgHXtOe2&_nc_zt=23&_nc_ht=scontent-jnb2-1.xx&_nc_gid=AqpD0kCp6LHaRkbllzSziyG&oh=00_AYBrMemnUKssgw-KwnWO8A2gKcrz5YxnAL_yZFVrPqAVFw&oe=676FEE7E'
-            />
+          <div className='flex justify-center items-top gap-1.5'>
+            <div style={{ textAlign: 'center', width: '100%', display: 'block' }}>
+              Supported By
+              <br />
+              <img
+                style={{ width: 100, margin: 'auto' }}
+                src='https://scontent-jnb2-1.xx.fbcdn.net/v/t1.6435-9/120351854_4723437567666322_5849636042101530311_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=2285d6&_nc_ohc=CzBJ2b6dydwQ7kNvgHXtOe2&_nc_zt=23&_nc_ht=scontent-jnb2-1.xx&_nc_gid=AqpD0kCp6LHaRkbllzSziyG&oh=00_AYBrMemnUKssgw-KwnWO8A2gKcrz5YxnAL_yZFVrPqAVFw&oe=676FEE7E'
+              />
+            </div>
+            <div style={{ textAlign: 'center', width: '100%', display: 'block' }}>
+              In partneership With
+              <br />
+              <img
+                style={{ width: 160, margin: 'auto' }}
+                src='/images/pages/logo1.jpg'
+              />
+            </div>
           </div>
         </div>
       </div>
