@@ -12,7 +12,7 @@ import ProvinceListCardsTiles from './ProvinceListCardsTiles'
 const ProvinceList = ({ userData }: { userData?: UsersType[] }) => {
 
   console.log(userData)
-  
+
   return (
     <Grid container spacing={6}>
       <Grid item xs={12}>
@@ -27,12 +27,12 @@ const ProvinceList = ({ userData }: { userData?: UsersType[] }) => {
   )
 }
 
-const ProvinceListTiles = () => {
+const ProvinceListTiles = ({ userData }: { userData?: UsersType[] }) => {
   return (
     <Grid container spacing={6}>
       <Grid item xs={12}>
-        <h1 className="page-title-h1" >Provinces Overview</h1>
-        <hr className="hr-divider"/>
+        <h1 className='page-title-h1'>Provinces Overview</h1>
+        <hr className='hr-divider' />
         <br />
         <br />
         <ProvinceListCardsTiles />
