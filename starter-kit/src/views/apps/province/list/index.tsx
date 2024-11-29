@@ -28,6 +28,8 @@ const ProvinceList = ({ userData }: { userData?: UsersType[] }) => {
 }
 
 const ProvinceListTiles = ({ userData }: { userData?: UsersType[] }) => {
+  console.log(userData)
+
   return (
     <Grid container spacing={6}>
       <Grid item xs={12}>
