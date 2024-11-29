@@ -4,7 +4,7 @@
 import { useState } from 'react'
 
 // Next Imports
-import { useRouter } from 'next/navigation'
+//import { useRouter } from 'next/navigation'
 
 // MUI Imports
 import useMediaQuery from '@mui/material/useMediaQuery'
@@ -72,7 +72,7 @@ const Login = ({ mode }: { mode: SystemMode }) => {
   const borderedLightIllustration = '/images/illustrations/auth/v2-login-light-border.png'
 
   // Hooks
-  const router = useRouter()
+  //const router = useRouter()
   const { settings } = useSettings()
   const theme = useTheme()
   const hidden = useMediaQuery(theme.breakpoints.down('md'))
@@ -88,7 +88,7 @@ const Login = ({ mode }: { mode: SystemMode }) => {
 
   const handleClickShowPassword = () => setIsPasswordShown(show => !show)
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: any) => {
     event.preventDefault()
     console.log("/")
     window.location.href = '/en/dashboards/crm';
@@ -135,7 +135,7 @@ const Login = ({ mode }: { mode: SystemMode }) => {
           <form
             noValidate
             autoComplete='off'
-            onSubmit={e => handleSubmit()}
+            onSubmit={e => handleSubmit(e)}
             className='flex flex-col gap-5'
           >
             <CustomTextField autoFocus fullWidth label='Email or Username' placeholder='Enter your email or username' />
