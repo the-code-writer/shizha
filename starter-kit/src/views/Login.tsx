@@ -122,7 +122,7 @@ const Login = ({ mode }: { mode: SystemMode }) => {
           <div style={{ textAlign: 'center', width: '100%', display: 'block' }}>
             <img
               style={{ maxWidth: 300, width: '100%', margin: 'auto' }}
-              src='http://www.zim.gov.zw/images/coatofarms.png'
+              src='/images/coatofarms.png'
             />
             <br />
             MINISTRY OF LANDS, AGRICULTURE, FISHERIES, WATER AND RURAL DEVELOPMENT
