@@ -108,7 +108,7 @@ const DistributedBarChartOrder = () => {
 
   return (
     <Card>
-      <CardHeader title='Order' subheader='Last Week' className='pbe-0' />
+      <CardHeader title='Farmers' subheader='Last Week' className='pbe-0' />
       <CardContent className='flex flex-col'>
         <AppReactApexCharts type='bar' height={84} width='100%' options={options} series={series} />
         <div className='flex items-center justify-between flex-wrap gap-x-4 gap-y-0.5'>

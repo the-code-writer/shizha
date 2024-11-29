@@ -229,7 +229,7 @@ const EarningReportsWithTabs = () => {
   return (
     <Card>
       <CardHeader
-        title='Earning Reports'
+        title='Zim Agric Marketplace Earning Reports'
         subheader='Yearly Earnings Overview'
         action={<OptionMenu options={['Last Week', 'Last Month', 'Last Year']} />}
       />

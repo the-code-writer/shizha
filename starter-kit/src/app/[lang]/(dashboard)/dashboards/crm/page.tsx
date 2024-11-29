@@ -31,7 +31,7 @@ const DashboardCRM = () => {
       </Grid>
       <Grid item xs={12} sm={6} md={4} lg={2}>
         <CardStatVertical
-          title='Total Profit'
+          title='Livestock Growth'
           subtitle='Last Week'
           stats='1.28k'
           avatarColor='error'
@@ -46,7 +46,7 @@ const DashboardCRM = () => {
       </Grid>
       <Grid item xs={12} sm={6} md={4} lg={2}>
         <CardStatVertical
-          title='Total Sales'
+          title='Marketplace Sales'
           subtitle='Last Week'
           stats='24.67k'
           avatarColor='success'
@@ -76,12 +76,6 @@ const DashboardCRM = () => {
       </Grid>
       <Grid item xs={12} md={6} lg={4}>
         <ActiveProjects />
-      </Grid>
-      <Grid item xs={12} md={6}>
-        <LastTransaction serverMode={serverMode} />
-      </Grid>
-      <Grid item xs={12} md={6}>
-        <ActivityTimeline />
       </Grid>
     </Grid>
   )

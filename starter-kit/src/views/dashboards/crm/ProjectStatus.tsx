@@ -29,20 +29,20 @@ type DataType = {
 
 // Vars
 const series = [
-  { data: [2000, 2000, 4000, 4000, 3050, 3050, 2050, 2050, 3050, 3050, 4700, 4700, 2750, 2750, 5700, 5700] }
+  { data: [20000, 20000, 40000, 40000, 30050, 30500, 20500, 20500, 30500, 30050, 47000, 47000, 27500, 27500, 57000, 57000] }
 ]
 
 const data: DataType[] = [
   {
-    title: 'Donates',
+    title: 'Contracts',
     trend: 'negative',
-    amount: '$756.26',
+    amount: '$756.26 Million',
     trendDiff: 139.34
   },
   {
-    title: 'Podcasts',
+    title: 'Commercial',
     trendDiff: 576.24,
-    amount: '$2,207.03'
+    amount: '$2,207.03 Million'
   }
 ]
 
@@ -117,7 +117,7 @@ const ProjectStatus = () => {
 
   return (
     <Card>
-      <CardHeader title='Project Status' action={<OptionMenu options={['Share', 'Refresh', 'Update']} />} />
+      <CardHeader title='Tobacco Earnings' action={<OptionMenu options={['Share', 'Refresh', 'Update']} />} />
       <CardContent className='flex flex-col gap-6'>
         <div className='flex items-center gap-4'>
           <CustomAvatar skin='light' variant='rounded' color='warning'>

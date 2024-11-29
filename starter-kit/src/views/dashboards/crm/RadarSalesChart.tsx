@@ -20,8 +20,8 @@ const AppReactApexCharts = dynamic(() => import('@/libs/styles/AppReactApexChart
 
 // Vars
 const series = [
-  { name: 'Sales', data: [32, 27, 27, 30, 25, 25] },
-  { name: 'Visits', data: [25, 35, 20, 20, 20, 20] }
+  { name: 'Inputs', data: [32, 27, 27, 30, 25, 25] },
+  { name: 'Output', data: [25, 35, 20, 20, 20, 20] }
 ]
 
 const RadarSalesChart = () => {
@@ -84,7 +84,7 @@ const RadarSalesChart = () => {
   return (
     <Card>
       <CardHeader
-        title='Sales'
+        title='Farmer Yeilds in 2024'
         subheader='Last 6 Months'
         action={<OptionMenu options={['Last Month', 'Last 6 months', 'Last Year']} />}
       />

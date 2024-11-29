@@ -21,43 +21,43 @@ type DataType = {
 // Vars
 const data: DataType[] = [
   {
-    title: 'Laravel',
-    subtitle: 'eCommerce',
+    title: 'Manicaland',
+    subtitle: '2,447 Tonnes',
     progress: 54,
     progressColor: 'error',
     imgSrc: '/images/logos/laravel.png'
   },
   {
-    title: 'Figma',
-    subtitle: 'App UI Kit',
+    title: 'Mashonaland East',
+    subtitle: '447 Tonnes',
     progress: 85,
     progressColor: 'primary',
     imgSrc: '/images/logos/figma.png'
   },
   {
-    title: 'VusJs',
-    subtitle: 'Calendar App',
+    title: 'Mashonaland West',
+    subtitle: '9,372 Tonnes',
     progress: 64,
     progressColor: 'success',
     imgSrc: '/images/logos/vue.png'
   },
   {
-    title: 'React',
-    subtitle: 'Dashboard',
+    title: 'Mashonaland Central',
+    subtitle: '9,382 Tonnes',
     progress: 40,
     progressColor: 'info',
     imgSrc: '/images/logos/react.png'
   },
   {
-    title: 'Bootstrap',
-    subtitle: 'Website',
+    title: 'Midlands',
+    subtitle: '1,476 Tonnes',
     progress: 17,
     progressColor: 'primary',
     imgSrc: '/images/logos/bootstrap.png'
   },
   {
-    title: 'Sketch',
-    subtitle: 'Website Design',
+    title: 'Masvingo',
+    subtitle: '947 Tonnes',
     progress: 30,
     progressColor: 'warning',
     imgSrc: '/images/logos/sketch.png'
@@ -68,14 +68,13 @@ const ActiveProjects = () => {
   return (
     <Card>
       <CardHeader
-        title='Active Projects'
+        title='Wheat Harvest for 2024 by Province'
         subheader='Average 72% completed'
         action={<OptionMenu options={['Refresh', 'Update', 'Share']} />}
       />
       <CardContent className='flex flex-col gap-4'>
         {data.map((item, index) => (
           <div key={index} className='flex items-center gap-4'>
-            <img src={item.imgSrc} alt={item.title} width={32} />
             <div className='flex flex-wrap justify-between items-center gap-x-4 gap-y-1 is-full'>
               <div className='flex flex-col'>
                 <Typography className='font-medium' color='text.primary'>

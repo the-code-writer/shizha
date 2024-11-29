@@ -173,7 +173,7 @@ const Footer = ({ mode }: { mode: Mode }) => {
           )}
         >
           <p className='text-white text-[13px]'>
-            <span>{`© ${new Date().getFullYear()}, Made with `}</span>
+            <span>{`© ${new Date().getFullYear()}, Made with x`}</span>
             <span>{`❤️`}</span>
             <span>{` by `}</span>
             <Link href='https://pixinvent.com/' target='_blank' className='font-medium text-white'>

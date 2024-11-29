@@ -124,7 +124,7 @@ const EarningReports = () => {
   return (
     <Card>
       <CardHeader
-        title='Earning Reports'
+        title='Marketplace Earnings'
         subheader='Weekly Earnings Overview'
         action={<OptionMenu options={['Refresh', 'Update', 'Share']} />}
       />
