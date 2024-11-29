@@ -88,6 +88,12 @@ const Login = ({ mode }: { mode: SystemMode }) => {
 
   const handleClickShowPassword = () => setIsPasswordShown(show => !show)
 
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    console.log("/")
+    window.location.href = '/en/dashboards/crm';
+  }
+
   return (
     <div className='flex bs-full justify-center'>
       <div
@@ -129,10 +135,7 @@ const Login = ({ mode }: { mode: SystemMode }) => {
           <form
             noValidate
             autoComplete='off'
-            onSubmit={e => {
-              e.preventDefault()
-              router.push('/')
-            }}
+            onSubmit={e => handleSubmit()}
             className='flex flex-col gap-5'
           >
             <CustomTextField autoFocus fullWidth label='Email or Username' placeholder='Enter your email or username' />

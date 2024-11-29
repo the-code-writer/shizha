@@ -46,7 +46,7 @@ const RenderExpandIcon = ({ open, transitionDuration }: RenderExpandIconProps) =
   </StyledVerticalNavExpandIcon>
 )
 
-const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
+const VerticalMenuOG = ({ dictionary, scrollMenu }: Props) => {
   // Hooks
   const theme = useTheme()
   const verticalNavOptions = useVerticalNav()
@@ -141,7 +141,7 @@ const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
               </MenuItem>
             </SubMenu>
             <MenuItem href={`/${locale}/apps/ecommerce/manage-reviews`}>
-              {dictionary['navigation'].manageReviews} 
+              {dictionary['navigation'].manageReviews}
             </MenuItem>
             <MenuItem href={`/${locale}/apps/ecommerce/referrals`}>{dictionary['navigation'].referrals}</MenuItem>
             <MenuItem href={`/${locale}/apps/ecommerce/settings`}>{dictionary['navigation'].settings}</MenuItem>
@@ -401,4 +401,4 @@ const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
   )
 }
 
-export default VerticalMenu
+export default VerticalMenuOG
