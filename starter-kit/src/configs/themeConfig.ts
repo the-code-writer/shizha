@@ -55,7 +55,7 @@ export type Config = {
 
 const themeConfig: Config = {
   templateName: 'Zhizha/Ibhizha',
-  homePageUrl: '/dashboards/crm',
+  homePageUrl: '/login',
   settingsCookieName: 'vuexy-mui-next-demo-1',
   mode: 'system', // 'system', 'light', 'dark'
   skin: 'default', // 'default', 'bordered'

@@ -15,7 +15,9 @@ const ProvinceList = ({ userData }: { userData?: UsersType[] }) => {
         <ProvinceListCards />
       </Grid>
       <Grid item xs={12}>
+        {/* 
         <ProvinceListTable tableData={userData} />
+        */}
       </Grid>
     </Grid>
   )
