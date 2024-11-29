@@ -105,9 +105,9 @@ const VerticalMenu = ({ scrollMenu }: Props) => {
           </SubMenu>
         </MenuSection>
         <MenuSection label={'Users'}>
-          <SubMenu label={'Agritext Officers'} icon={<i className='tabler-user' />}>
+          <SubMenu label={'Agritext'} icon={<i className='tabler-user' />}>
             <MenuItem href={`/${locale}/apps/user-agritex/list`}>Agritext Officers</MenuItem>
-            <MenuItem href={`/${locale}/apps/user-agritext-new/view`}>Add New Agritext Officer</MenuItem>
+            <MenuItem href={`/${locale}/apps/user-agritex/view`}>Add New Agritext Officer</MenuItem>
           </SubMenu>
           <SubMenu label={'Farmers'} icon={<i className='tabler-user' />}>
             <MenuItem href={`/${locale}/apps/user-farmer/list`}>Registered Farmers</MenuItem>
