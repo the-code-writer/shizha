@@ -1,5 +1,5 @@
 // Component Imports
-import ProvinceList from '@views/apps/province/list'
+import { ProvinceList } from '@views/apps/province/list'
 
 // Data Imports
 import { getUserData } from '@/app/server/actions'
