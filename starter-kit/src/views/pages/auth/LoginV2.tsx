@@ -4,7 +4,8 @@
 import { useState } from 'react'
 
 // Next Imports
-import { useRouter } from 'next/navigation'
+import Link from 'next/link'
+import { useParams } from 'next/navigation'
 
 // MUI Imports
 import useMediaQuery from '@mui/material/useMediaQuery'
@@ -22,18 +23,21 @@ import classnames from 'classnames'
 
 // Type Imports
 import type { SystemMode } from '@core/types'
+import type { Locale } from '@configs/i18n'
 
 // Component Imports
-import Link from '@components/Link'
 import Logo from '@components/layout/shared/Logo'
 import CustomTextField from '@core/components/mui/TextField'
 
 // Config Imports
-// import themeConfig from '@configs/themeConfig'
+import themeConfig from '@configs/themeConfig'
 
 // Hook Imports
 import { useImageVariant } from '@core/hooks/useImageVariant'
 import { useSettings } from '@core/hooks/useSettings'
+
+// Util Imports
+import { getLocalizedUrl } from '@/utils/i18n'
 
 // Styled Custom Components
 const LoginIllustration = styled('img')(({ theme }) => ({
@@ -59,7 +63,7 @@ const MaskImg = styled('img')({
   zIndex: -1
 })
 
-const Login = ({ mode }: { mode: SystemMode }) => {
+const LoginV2 = ({ mode }: { mode: SystemMode }) => {
   // States
   const [isPasswordShown, setIsPasswordShown] = useState(false)
 
@@ -72,7 +76,7 @@ const Login = ({ mode }: { mode: SystemMode }) => {
   const borderedLightIllustration = '/images/illustrations/auth/v2-login-light-border.png'
 
   // Hooks
-  const router = useRouter()
+  const { lang: locale } = useParams()
   const { settings } = useSettings()
   const theme = useTheme()
   const hidden = useMediaQuery(theme.breakpoints.down('md'))
@@ -108,33 +112,18 @@ const Login = ({ mode }: { mode: SystemMode }) => {
         )}
       </div>
       <div className='flex justify-center items-center bs-full bg-backgroundPaper !min-is-full p-6 md:!min-is-[unset] md:p-12 md:is-[480px]'>
-        <Link className='absolute block-start-5 sm:block-start-[33px] inline-start-6 sm:inline-start-[38px]'>
+        <Link
+          href={getLocalizedUrl('/', locale as Locale)}
+          className='absolute block-start-5 sm:block-start-[33px] inline-start-6 sm:inline-start-[38px]'
+        >
           <Logo />
         </Link>
         <div className='flex flex-col gap-6 is-full sm:is-auto md:is-full sm:max-is-[400px] md:max-is-[unset] mbs-11 sm:mbs-14 md:mbs-0'>
-          <br />
-          <div style={{ textAlign: 'center', width: '100%', display: 'block' }}>
-            <img
-              style={{ maxWidth: 300, width: '100%', margin: 'auto' }}
-              src='http://www.zim.gov.zw/images/coatofarms.png'
-            />
-            <br />
-            MINISTRY OF LANDS, AGRICULTURE, FISHERIES, WATER AND RURAL DEVELOPMENT
-            <br />
-          </div>
           <div className='flex flex-col gap-1'>
-            {/* <Typography variant='h4'>{`Welcome to ${themeConfig.templateName}! 👋🏻`}</Typography> */}
-            <Typography>Ple`se login your account using your credentials</Typography>
+            <Typography variant='h4'>{`Welcome to ${themeConfig.templateName}! 👋🏻`}</Typography>
+            <Typography>xcv Please sign-in to your account and start the adventure</Typography>
           </div>
-          <form
-            noValidate
-            autoComplete='off'
-            onSubmit={e => {
-              e.preventDefault()
-              router.push('/')
-            }}
-            className='flex flex-col gap-5'
-          >
+          <form noValidate autoComplete='off' onSubmit={e => e.preventDefault()} className='flex flex-col gap-6'>
             <CustomTextField autoFocus fullWidth label='Email or Username' placeholder='Enter your email or username' />
             <CustomTextField
               fullWidth
@@ -154,7 +143,12 @@ const Login = ({ mode }: { mode: SystemMode }) => {
             />
             <div className='flex justify-between items-center gap-x-3 gap-y-1 flex-wrap'>
               <FormControlLabel control={<Checkbox />} label='Remember me' />
-              <Typography className='text-end' color='primary' component={Link}>
+              <Typography
+                className='text-end'
+                color='primary'
+                component={Link}
+                href={getLocalizedUrl('/pages/auth/forgot-password-v2', locale as Locale)}
+              >
                 Forgot password?
               </Typography>
             </div>
@@ -163,7 +157,11 @@ const Login = ({ mode }: { mode: SystemMode }) => {
             </Button>
             <div className='flex justify-center items-center flex-wrap gap-2'>
               <Typography>New on our platform?</Typography>
-              <Typography component={Link} color='primary'>
+              <Typography
+                component={Link}
+                href={getLocalizedUrl('/pages/auth/register-v2', locale as Locale)}
+                color='primary'
+              >
                 Create an account
               </Typography>
             </div>
@@ -183,29 +181,10 @@ const Login = ({ mode }: { mode: SystemMode }) => {
               </IconButton>
             </div>
           </form>
-          <br />
-          <div className='flex justify-center items-top gap-1.5'>
-            <div style={{ textAlign: 'center', width: '100%', display: 'block' }}>
-              Supported By
-              <br />
-              <img
-                style={{ width: 100, margin: 'auto' }}
-                src='https://scontent-jnb2-1.xx.fbcdn.net/v/t1.6435-9/120351854_4723437567666322_5849636042101530311_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=2285d6&_nc_ohc=CzBJ2b6dydwQ7kNvgHXtOe2&_nc_zt=23&_nc_ht=scontent-jnb2-1.xx&_nc_gid=AqpD0kCp6LHaRkbllzSziyG&oh=00_AYBrMemnUKssgw-KwnWO8A2gKcrz5YxnAL_yZFVrPqAVFw&oe=676FEE7E'
-              />
-            </div>
-            <div style={{ textAlign: 'center', width: '100%', display: 'block' }}>
-              In partneership With
-              <br />
-              <img
-                style={{ width: 160, margin: 'auto' }}
-                src='/images/pages/logo1.jpg'
-              />
-            </div>
-          </div>
         </div>
       </div>
     </div>
   )
 }
 
-export default Login
+export default LoginV2
