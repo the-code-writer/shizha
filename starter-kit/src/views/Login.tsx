@@ -189,7 +189,7 @@ const Login = ({ mode }: { mode: SystemMode }) => {
     event.preventDefault()
     console.log("/")
     window.location.href = '/en/dashboards/crm';
-    
+
   }
 
   return (
@@ -294,7 +294,7 @@ const Login = ({ mode }: { mode: SystemMode }) => {
               <br />
               <img
                 style={{ width: 100, margin: 'auto' }}
-                src='https://scontent-jnb2-1.xx.fbcdn.net/v/t1.6435-9/120351854_4723437567666322_5849636042101530311_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=2285d6&_nc_ohc=CzBJ2b6dydwQ7kNvgHXtOe2&_nc_zt=23&_nc_ht=scontent-jnb2-1.xx&_nc_gid=AqpD0kCp6LHaRkbllzSziyG&oh=00_AYBrMemnUKssgw-KwnWO8A2gKcrz5YxnAL_yZFVrPqAVFw&oe=676FEE7E'
+                src='https://scontent-cpt1-1.xx.fbcdn.net/v/t39.30808-1/327178789_751714596389565_8926554342126211208_n.png?stp=dst-png_s200x200&_nc_cat=109&ccb=1-7&_nc_sid=f907e8&_nc_ohc=fyBUrH-kyQEQ7kNvgFc0IG5&_nc_zt=24&_nc_ht=scontent-cpt1-1.xx&_nc_gid=AqFuLyI1nZ2qhI7TNDznGpk&oh=00_AYAyqbaTKy_PSpiMLXbLqFgP-lr8S32pC2rPJMigxbop_w&oe=67A8464F'
               />
             </div>
             <div style={{ textAlign: 'center', width: '100%', display: 'block' }}>
