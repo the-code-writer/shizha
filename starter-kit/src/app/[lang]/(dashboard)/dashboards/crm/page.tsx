@@ -65,13 +65,73 @@ const DashboardCRM = () => {
       <Grid item xs={12} md={6} lg={4}>
         <RadarSalesChart />
       </Grid>
-      <Grid item xs={12} md={6} lg={4}>
-        <SalesByCountries />
+      <Grid item xs={12} md={12} lg={12}>
+        <h1>Tobacco</h1>
       </Grid>
-      <Grid item xs={12} md={6} lg={4}>
+      <Grid item xs={12} md={6} lg={6}>
         <ProjectStatus />
       </Grid>
-      <Grid item xs={12} md={6} lg={4}>
+      <Grid item xs={12} md={6} lg={6}>
+        <ActiveProjects />
+      </Grid>
+
+      <Grid item xs={12} md={12} lg={12}>
+        <h1>Maize</h1>
+      </Grid>
+      <Grid item xs={12} md={6} lg={6}>
+        <ProjectStatus />
+      </Grid>
+      <Grid item xs={12} md={6} lg={6}>
+        <ActiveProjects />
+      </Grid>
+
+      <Grid item xs={12} md={12} lg={12}>
+        <h1>Cotton</h1>
+      </Grid>
+      <Grid item xs={12} md={6} lg={6}>
+        <ProjectStatus />
+      </Grid>
+      <Grid item xs={12} md={6} lg={6}>
+        <ActiveProjects />
+      </Grid>
+
+      <Grid item xs={12} md={12} lg={12}>
+        <h1>Wheat</h1>
+      </Grid>
+      <Grid item xs={12} md={6} lg={6}>
+        <ProjectStatus />
+      </Grid>
+      <Grid item xs={12} md={6} lg={6}>
+        <ActiveProjects />
+      </Grid>
+
+      <Grid item xs={12} md={12} lg={12}>
+        <h1>Sugar</h1>
+      </Grid>
+      <Grid item xs={12} md={6} lg={6}>
+        <ProjectStatus />
+      </Grid>
+      <Grid item xs={12} md={6} lg={6}>
+        <ActiveProjects />
+      </Grid>
+
+      <Grid item xs={12} md={12} lg={12}>
+        <h1>Horticulture</h1>
+      </Grid>
+      <Grid item xs={12} md={6} lg={6}>
+        <ProjectStatus />
+      </Grid>
+      <Grid item xs={12} md={6} lg={6}>
+        <ActiveProjects />
+      </Grid>
+
+      <Grid item xs={12} md={12} lg={12}>
+        <h1>Livestock</h1>
+      </Grid>
+      <Grid item xs={12} md={6} lg={6}>
+        <ProjectStatus />
+      </Grid>
+      <Grid item xs={12} md={6} lg={6}>
         <ActiveProjects />
       </Grid>
     </Grid>

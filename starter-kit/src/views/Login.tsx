@@ -63,6 +63,27 @@ const Login = ({ mode }: { mode: SystemMode }) => {
   // States
   const [isPasswordShown, setIsPasswordShown] = useState(false)
 
+  const [username, setUsername] = useState('')
+
+  const [password, setPassword] = useState('')
+
+  const [email, setEmail] = useState('')
+  
+  const [user, setUser] = useState<null|any>(null)
+
+  // Mapping of user types to specific first and last names
+  const userTypeNames:any = {
+    root: { firstName: 'System', lastName: 'Administrator' },
+    admin: { firstName: 'Admin', lastName: 'User' },
+    gov: { firstName: 'Government', lastName: 'Official' },
+    ministry: { firstName: 'Ministry', lastName: 'Official' },
+    permsec: { firstName: 'Permanent', lastName: 'Secretary' },
+    agritex: { firstName: 'Agritex', lastName: 'Officer' },
+    farmer: { firstName: 'John', lastName: 'Doe' },
+    buyer: { firstName: 'Jane', lastName: 'Smith' },
+    seller: { firstName: 'Alice', lastName: 'Johnson' }
+  }
+
   // Vars
   const darkImg = '/images/pages/auth-mask-dark.png'
   const lightImg = '/images/pages/auth-mask-light.png'
@@ -89,9 +110,86 @@ const Login = ({ mode }: { mode: SystemMode }) => {
   const handleClickShowPassword = () => setIsPasswordShown(show => !show)
 
   const handleSubmit = (event: any) => {
+
+    let userType = ''
+    let email = ''
+
+    switch (username.toLowerCase()) {
+      case 'root':
+      case 'root@zhizha.gov.zw':
+        userType = 'root'
+        email = 'root@zhizha.gov.zw'
+        break
+      case 'admin':
+      case 'admin@zhizha.gov.zw':
+        userType = 'admin'
+        email = 'admin@zhizha.gov.zw'
+        break
+      case 'gov':
+      case 'gov@zhizha.gov.zw':
+        userType = 'gov'
+        email = 'gov@zhizha.gov.zw'
+        break
+      case 'ministry':
+      case 'ministry@zhizha.gov.zw':
+        userType = 'ministry'
+        email = 'ministry@zhizha.gov.zw'
+        break
+      case 'permsec':
+      case 'permsec@zhizha.gov.zw':
+        userType = 'permsec'
+        email = 'permsec@zhizha.gov.zw'
+        break
+      case 'agritex':
+      case 'agritex@zhizha.gov.zw':
+        userType = 'agritex'
+        email = 'agritex@zhizha.gov.zw'
+        break
+      case 'farmer':
+      case 'farmer@zhizha.gov.zw':
+        userType = 'farmer'
+        email = 'farmer@zhizha.gov.zw'
+        break
+      case 'buyer':
+      case 'buyer@zhizha.gov.zw':
+        userType = 'buyer'
+        email = 'buyer@zhizha.gov.zw'
+        break
+      case 'seller':
+      case 'seller@zhizha.gov.zw':
+        userType = 'seller'
+        email = 'seller@zhizha.gov.zw'
+        break
+      default:
+        alert('Invalid username or email')
+        return
+    }
+
+    // Get the specific first and last names for the user type
+    const { firstName, lastName } = userTypeNames[userType]
+
+    // Create user object
+    const userObject = {
+      userType: userType,
+      email: email,
+      password: btoa(password), // Hash the password using md5
+      firstName: firstName,
+      lastName: lastName
+    }
+
+    // Save user object (you can replace this with your actual state management or API call)
+    setUser(userObject)
+
+    localStorage.setItem(
+      "user_data",
+      JSON.stringify(userObject)
+    );
+
+
     event.preventDefault()
     console.log("/")
     window.location.href = '/en/dashboards/crm';
+    
   }
 
   return (
@@ -120,31 +218,34 @@ const Login = ({ mode }: { mode: SystemMode }) => {
         <div className='flex flex-col gap-6 is-full sm:is-auto md:is-full sm:max-is-[400px] md:max-is-[unset] mbs-11 sm:mbs-14 md:mbs-0'>
           <br />
           <div style={{ textAlign: 'center', width: '100%', display: 'block' }}>
-            <img
-              style={{ maxWidth: 300, width: '100%', margin: 'auto' }}
-              src='/images/coatofarms.png'
-            />
+            <img style={{ maxWidth: 300, width: '100%', margin: 'auto' }} src='/images/coatofarms.png' />
             <br />
             MINISTRY OF LANDS, AGRICULTURE, FISHERIES, WATER AND RURAL DEVELOPMENT
             <br />
           </div>
           <div className='flex flex-col gap-1'>
             {/* <Typography variant='h4'>{`Welcome to ${themeConfig.templateName}! 👋🏻`}</Typography> */}
-            <Typography>Ple`se login your account using your credentials</Typography>
+            <Typography>Please login your account using your credentials</Typography>
           </div>
-          <form
-            noValidate
-            autoComplete='off'
-            onSubmit={e => handleSubmit(e)}
-            className='flex flex-col gap-5'
-          >
-            <CustomTextField autoFocus fullWidth label='Email or Username' placeholder='Enter your email or username' />
+          <form noValidate autoComplete='off' onSubmit={e => handleSubmit(e)} className='flex flex-col gap-5'>
+            <CustomTextField
+              autoFocus
+              fullWidth
+              label='Email or Username'
+              placeholder='Enter your email address'
+              onChange={e => {
+                setUsername(e.target.value)
+              }}
+            />
             <CustomTextField
               fullWidth
               label='Password'
               placeholder='············'
               id='outlined-adornment-password'
               type={isPasswordShown ? 'text' : 'password'}
+              onChange={e => {
+                setPassword(e.target.value)
+              }}
               InputProps={{
                 endAdornment: (
                   <InputAdornment position='end'>
@@ -199,10 +300,7 @@ const Login = ({ mode }: { mode: SystemMode }) => {
             <div style={{ textAlign: 'center', width: '100%', display: 'block' }}>
               In partneership With
               <br />
-              <img
-                style={{ width: 160, margin: 'auto' }}
-                src='/images/pages/logo1.jpg'
-              />
+              <img style={{ width: 160, margin: 'auto' }} src='/images/pages/logo1.jpg' />
             </div>
           </div>
         </div>
