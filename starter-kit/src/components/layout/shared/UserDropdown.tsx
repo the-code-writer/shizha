@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react'
 import type { MouseEvent } from 'react'
 
 // Next Imports
-import { useParams, useRouter } from 'next/navigation'
+//import { useParams, useRouter } from 'next/navigation'
 
 // MUI Imports
 import { styled } from '@mui/material/styles'
@@ -43,6 +43,7 @@ const BadgeContentSpan = styled('span')({
 })
 
 const UserDropdown = () => {
+  
   // States
   const [open, setOpen] = useState(false)
 
@@ -52,6 +53,7 @@ const UserDropdown = () => {
   // Hooks
   //const router = useRouter()
   const { settings } = useSettings()
+
   //const { lang: locale } = useParams()
 
   const handleDropdownOpen = () => {
