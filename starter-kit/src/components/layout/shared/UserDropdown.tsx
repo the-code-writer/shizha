@@ -88,7 +88,6 @@ const UserDropdown = () => {
 
   const [userEmail, setUserEmail] = useState<string>('')
 
-  const [userType, setUserType] = useState<null | any>(null)
 
   useEffect(() => {
     let userObject: any | null = null

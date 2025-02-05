@@ -66,8 +66,6 @@ const Login = ({ mode }: { mode: SystemMode }) => {
   const [username, setUsername] = useState('')
 
   const [password, setPassword] = useState('')
-
-  const [email, setEmail] = useState('')
   
   const [user, setUser] = useState<null|any>(null)
 
@@ -189,6 +187,10 @@ const Login = ({ mode }: { mode: SystemMode }) => {
     event.preventDefault()
     console.log("/")
     window.location.href = '/en/dashboards/crm';
+
+    if (user) {
+      
+    }
 
   }
 
