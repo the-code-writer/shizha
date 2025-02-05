@@ -50,9 +50,9 @@ const UserDropdown = () => {
   const anchorRef = useRef<HTMLDivElement>(null)
 
   // Hooks
-  const router = useRouter()
+  //const router = useRouter()
   const { settings } = useSettings()
-  const { lang: locale } = useParams()
+  //const { lang: locale } = useParams()
 
   const handleDropdownOpen = () => {
     !open ? setOpen(true) : setOpen(false)

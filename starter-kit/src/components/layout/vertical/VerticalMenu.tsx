@@ -127,7 +127,7 @@ const VerticalMenu = ({ scrollMenu }: Props) => {
         {['supervisor', 'ministry', 'permsec', 'gov', 'admin', 'root', 'buyer', 'seller'].includes(userType) && (
           <MenuSection label={'Regions'}>
             <SubMenu label={'Provinces'} icon={<i className='tabler-user' />}>
-              <MenuItem href={`/${locale}/apps/province/overview`}>Provinces Overview</MenuItem>
+              <MenuItem href={`/${locale}/apps/province/overview`}>Provinces Overview::</MenuItem>
               <MenuItem href={`/${locale}/apps/province/list?place=harare`}>Harare</MenuItem>
               <MenuItem href={`/${locale}/apps/province/list?place=bulawayo`}>Bulawayo</MenuItem>
               <MenuItem href={`/${locale}/apps/province/list?place=mashonaland-central`}>Mashonaland Central</MenuItem>
