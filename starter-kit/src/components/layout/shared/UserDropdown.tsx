@@ -1,7 +1,7 @@
 'use client'
 
 // React Imports
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { MouseEvent } from 'react'
 
 // Next Imports
@@ -81,6 +81,43 @@ const UserDropdown = () => {
     }
   }
 
+
+  const [user, setUser] = useState<null | any>(null)
+
+  const [userFullname, setUserFullname] = useState<string>('')
+
+  const [userEmail, setUserEmail] = useState<string>('')
+
+  const [userType, setUserType] = useState<null | any>(null)
+
+  useEffect(() => {
+    let userObject: any | null = null
+
+    const userData = localStorage.getItem('user_data')
+
+    if (userData) {
+      try {
+        userObject = JSON.parse(userData)
+        console.log('Done fetching user', userObject)
+      } catch (error) {
+        console.log('Error fetching user', userData)
+      }
+    }
+
+    setUser(userObject)
+  }, [])
+
+  useEffect(() => {
+    if (user) {
+      console.log('User Names', `${user.firstName} ${user.lastName}`)
+      setUserFullname(`${user.firstName} ${user.lastName}`)
+      setUserEmail(`${user.email}`)
+    } else {
+      console.log('Error User Type', user)
+    }
+  }, [user])
+
+
   return (
     <>
       <Badge
@@ -117,12 +154,12 @@ const UserDropdown = () => {
               <ClickAwayListener onClickAway={e => handleDropdownClose(e as MouseEvent | TouchEvent)}>
                 <MenuList>
                   <div className='flex items-center plb-2 pli-6 gap-2' tabIndex={-1}>
-                    <Avatar alt={'Tatenda Sibanda'} src={'/images/avatars/1.png'} />
+                    <Avatar alt={userFullname} src={'/images/avatars/1.png'} />
                     <div className='flex items-start flex-col'>
                       <Typography className='font-medium' color='text.primary'>
-                        {'Tatenda Sibanda'}
+                        {userFullname}
                       </Typography>
-                      <Typography variant='caption'>{'tatenda.sibanda@gmail.com'}</Typography>
+                      <Typography variant='caption'>{userEmail}</Typography>
                     </div>
                   </div>
                   <Divider className='mlb-1' />
