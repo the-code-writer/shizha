@@ -36,7 +36,7 @@ const productData: Record<
     earnings: '$4,200,000',
     trendDiff: 12.5,
     trend: 'positive',
-    series: [30000, 32000, 31000, 34000, 36000, 37000, 38000, 39000],
+    series: Array.from({ length: 50 }, () => Math.floor(Math.random() * 50000) + 30000),
     stats: [
       { title: 'Contracts', amount: '$1,200 Million', trendDiff: 50.34, trend: 'positive' },
       { title: 'Commercial', amount: '$2,500 Million', trendDiff: -100.24, trend: 'negative' }
@@ -46,7 +46,7 @@ const productData: Record<
     earnings: '$4,3742',
     trendDiff: 10.2,
     trend: 'positive',
-    series: [20000, 25000, 30000, 35000, 40000],
+    series: Array.from({ length: 50 }, () => Math.floor(Math.random() * 40000) + 20000),
     stats: [
       { title: 'Contracts', amount: '$756.26 Million', trendDiff: -139.34, trend: 'negative' },
       { title: 'Commercial', amount: '$2,207.03 Million', trendDiff: 576.24 }
@@ -56,7 +56,7 @@ const productData: Record<
     earnings: '$3,500,000',
     trendDiff: -5.0,
     trend: 'negative',
-    series: [25000, 26000, 27000, 28000],
+    series: Array.from({ length: 50 }, () => Math.floor(Math.random() * 60000) + 25000),
     stats: [
       { title: 'Contracts', amount: '$1,000 Million', trendDiff: -20.0, trend: 'negative' },
       { title: 'Commercial', amount: '$1,500 Million', trendDiff: 50.0 }
@@ -66,7 +66,7 @@ const productData: Record<
     earnings: '$5,000,000',
     trendDiff: 15.0,
     trend: 'positive',
-    series: [40000, 42000, 43000],
+    series: Array.from({ length: 50 }, () => Math.floor(Math.random() * 70000) + 40000),
     stats: [
       { title: 'Contracts', amount: '$800 Million', trendDiff: -10.0 },
       { title: 'Commercial', amount: '$1,200 Million', trendDiff: 100.0 }
@@ -76,10 +76,30 @@ const productData: Record<
     earnings: '$6,000,000',
     trendDiff: -8.0,
     trend: 'negative',
-    series: [15000, 16000],
+    series: Array.from({ length: 50 }, () => Math.floor(Math.random() * 30000) + 15000),
     stats: [
       { title: 'Contracts', amount: '$500 Million', trendDiff: -5.0 },
       { title: 'Commercial', amount: '$1,000 Million', trendDiff: -50.0 }
+    ]
+  },
+  cotton: {
+    earnings: `$4M`,
+    trendDiff: -3.5,
+    trend: 'negative',
+    series: Array.from({ length: 50 }, () => Math.floor(Math.random() * (60000 - 20000 + 1)) + 20000),
+    stats: [
+      { title: 'Contracts', amount: '$900 Million', trendDiff: -30.0 },
+      { title: 'Commercial', amount: '$1,800 Million', trendDiff: +70.0 }
+    ]
+  },
+  horticulture: {
+    earnings: `$3M`,
+    trendDiff: +5.0,
+    trend: 'positive',
+    series: Array.from({ length: 50 }, () => Math.floor(Math.random() * (50000 - 15000 + 1)) + 15000),
+    stats: [
+      { title: 'Contracts', amount: '$700 Million', trendDiff: +20.0 },
+      { title: 'Commercial', amount: '$1,200 Million', trendDiff: -10.0 }
     ]
   }
 }
