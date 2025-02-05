@@ -38,7 +38,7 @@ const data: UserDataType[] = [
   },
   {
     title: 'Maize',
-    stats: '19,863 Tonnes',
+    stats: '19,860 Tonnes',
     avatarIcon: 'tabler-user-check',
     avatarColor: 'success',
     trend: 'negative',
@@ -79,6 +79,42 @@ const data: UserDataType[] = [
     avatarColor: 'warning',
     trend: 'positive',
     trendNumber: '42%',
+    subtitle: 'For the month of 2024'
+  },
+  {
+    title: 'Cotton',
+    stats: '98,125 KGs',
+    avatarIcon: 'tabler-user-search',
+    avatarColor: 'warning',
+    trend: 'positive',
+    trendNumber: '42%',
+    subtitle: 'For the month of 2024'
+  },
+  {
+    title: 'Horticulture',
+    stats: '125,210 KGs',
+    avatarIcon: 'tabler-user-search',
+    avatarColor: 'warning',
+    trend: 'positive',
+    trendNumber: '2%',
+    subtitle: 'For the month of 2024'
+  },
+  {
+    title: 'Paprika',
+    stats: '11,210 KGs',
+    avatarIcon: 'tabler-user-search',
+    avatarColor: 'warning',
+    trend: 'positive',
+    trendNumber: '1%',
+    subtitle: 'For the month of 2024'
+  },
+  {
+    title: 'Peas',
+    stats: '56,943 KGs',
+    avatarIcon: 'tabler-user-search',
+    avatarColor: 'warning',
+    trend: 'positive',
+    trendNumber: '9%',
     subtitle: 'For the month of 2024'
   }
 ]
