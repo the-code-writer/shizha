@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react'
+
 // Next Imports
 import { useParams } from 'next/navigation'
 
@@ -59,6 +61,39 @@ const VerticalMenu = ({ scrollMenu }: Props) => {
 
   const ScrollWrapper = isBreakpointReached ? 'div' : PerfectScrollbar
 
+  const [user, setUser] = useState<null | any>(null)
+
+  const [userType, setUserType] = useState<null | any>(null)
+
+  useEffect(() => {
+    let userObject: any | null = null
+
+    const userData = localStorage.getItem('user_data')
+
+    if (userData) {
+      try {
+        userObject = JSON.parse(userData)
+        console.log('Done fetching user', userObject)
+      } catch (error) {
+        console.log('Error fetching user', userData)
+      }
+    }
+
+    setUser(userObject)
+  }, [])
+
+  useEffect(() => {
+
+    if (user) {
+      console.log('User Type', user.userType)
+      setUserType(user.userType)
+    }else{
+      console.log('Error User Type', user)
+    }
+
+    
+  }, [user])
+
   return (
     // eslint-disable-next-line lines-around-comment
     /* Custom scrollbar instead of browser scroll, remove if you want browser scroll only */
@@ -89,42 +124,65 @@ const VerticalMenu = ({ scrollMenu }: Props) => {
         >
           <MenuItem href={`/${locale}/dashboards/crm`}>Dashboard</MenuItem>
         </SubMenu>
-        <MenuSection label={'Regions'}>
-          <SubMenu label={'Provinces'} icon={<i className='tabler-user' />}>
-            <MenuItem href={`/${locale}/apps/province/overview`}>Provinces Overview</MenuItem>
-            <MenuItem href={`/${locale}/apps/province/list?place=harare`}>Harare</MenuItem>
-            <MenuItem href={`/${locale}/apps/province/list?place=bulawayo`}>Bulawayo</MenuItem>
-            <MenuItem href={`/${locale}/apps/province/list?place=mashonaland-central`}>Mashonaland Central</MenuItem>
-            <MenuItem href={`/${locale}/apps/province/list?place=mashonaland-east`}>Mashonaland CentrEastal</MenuItem>
-            <MenuItem href={`/${locale}/apps/province/list?place=mashonaland-west`}>Mashonaland West</MenuItem>
-            <MenuItem href={`/${locale}/apps/province/list?place=manicaland`}>Manicaland</MenuItem>
-            <MenuItem href={`/${locale}/apps/province/list?place=masvingo`}>Masvingo</MenuItem>
-            <MenuItem href={`/${locale}/apps/province/list?place=midlands`}>Midlands</MenuItem>
-            <MenuItem href={`/${locale}/apps/province/list?place=matebeleland-north`}>Matebeleland North</MenuItem>
-            <MenuItem href={`/${locale}/apps/province/list?place=matebeleland-south`}>Matebeleland South</MenuItem>
-          </SubMenu>
-        </MenuSection>
-        <MenuSection label={'Users'}>
-          <SubMenu label={'Agritext'} icon={<i className='tabler-user' />}>
-            <MenuItem href={`/${locale}/apps/user-agritex/list`}>Agritext Officers</MenuItem>
-            <MenuItem href={`/${locale}/apps/user-agritex/view`}>Add New Agritext Officer</MenuItem>
-          </SubMenu>
-          <SubMenu label={'Farmers'} icon={<i className='tabler-user' />}>
-            <MenuItem href={`/${locale}/apps/user-farmer/list`}>Registered Farmers</MenuItem>
-            <MenuItem href={`/${locale}/apps/user-farmer-new/view`}>Add New Farmer</MenuItem>
-          </SubMenu>
-        </MenuSection>
-        <MenuSection label={'Tools'}>
-          <SubMenu label={'Weather'} icon={<i className='tabler-user' />}>
-            <MenuItem href={`/${locale}/apps/tools/weather-forecast`}>Weather Forecast</MenuItem>
-            <MenuItem href={`/${locale}/apps/tools/weather-report`}>Weather Report</MenuItem>
-            <MenuItem href={`/${locale}/apps/tools/plating-dates`}>Planting Dates</MenuItem>
-            <MenuItem href={`/${locale}/apps/tools/disease-tracking`}>Disease Tracking</MenuItem>
-          </SubMenu>
-          <SubMenu label={'Calculators'} icon={<i className='tabler-user' />}>
-            <MenuItem href={`/${locale}/apps/utools/yeild`}>Yeild Tools</MenuItem>
-          </SubMenu>
-        </MenuSection>
+        {['supervisor', 'ministry', 'permsec', 'gov', 'admin', 'root', 'buyer', 'seller'].includes(userType) && (
+          <MenuSection label={'Regions'}>
+            <SubMenu label={'Provinces'} icon={<i className='tabler-user' />}>
+              <MenuItem href={`/${locale}/apps/province/overview`}>Provinces Overview</MenuItem>
+              <MenuItem href={`/${locale}/apps/province/list?place=harare`}>Harare</MenuItem>
+              <MenuItem href={`/${locale}/apps/province/list?place=bulawayo`}>Bulawayo</MenuItem>
+              <MenuItem href={`/${locale}/apps/province/list?place=mashonaland-central`}>Mashonaland Central</MenuItem>
+              <MenuItem href={`/${locale}/apps/province/list?place=mashonaland-east`}>Mashonaland CentrEastal</MenuItem>
+              <MenuItem href={`/${locale}/apps/province/list?place=mashonaland-west`}>Mashonaland West</MenuItem>
+              <MenuItem href={`/${locale}/apps/province/list?place=manicaland`}>Manicaland</MenuItem>
+              <MenuItem href={`/${locale}/apps/province/list?place=masvingo`}>Masvingo</MenuItem>
+              <MenuItem href={`/${locale}/apps/province/list?place=midlands`}>Midlands</MenuItem>
+              <MenuItem href={`/${locale}/apps/province/list?place=matebeleland-north`}>Matebeleland North</MenuItem>
+              <MenuItem href={`/${locale}/apps/province/list?place=matebeleland-south`}>Matebeleland South</MenuItem>
+            </SubMenu>
+          </MenuSection>
+        )}
+        {['agritex', 'supervisor', 'farmer', 'ministry', 'permsec', 'gov', 'admin', 'root', 'buyer', 'seller'].includes(
+          userType
+        ) && (
+          <MenuSection label={'Users'}>
+            {['supervisor', 'ministry', 'permsec', 'gov', 'admin', 'root'].includes(userType) && (
+              <SubMenu label={'Agritext'} icon={<i className='tabler-user' />}>
+                <MenuItem href={`/${locale}/apps/user-agritex/list`}>Agritext Officers</MenuItem>
+                <MenuItem href={`/${locale}/apps/user-agritex/view`}>Add New Agritext Officer</MenuItem>
+              </SubMenu>
+            )}
+            {['agritex', 'supervisor', 'ministry', 'permsec', 'gov', 'admin', 'root'].includes(userType) && (
+              <SubMenu label={'Farmers'} icon={<i className='tabler-user' />}>
+                <MenuItem href={`/${locale}/apps/user-farmer/list`}>Registered Farmers</MenuItem>
+                <MenuItem href={`/${locale}/apps/user-farmer-new/view`}>Add New Farmer</MenuItem>
+              </SubMenu>
+            )}
+          </MenuSection>
+        )}
+        {['agritex', 'supervisor', 'farmer', 'ministry', 'permsec', 'gov', 'admin', 'root', 'buyer', 'seller'].includes(
+          userType
+        ) && (
+          <MenuSection label={'Tools'}>
+            <SubMenu label={'Weather'} icon={<i className='tabler-user' />}>
+              <MenuItem href={`/${locale}/apps/tools/weather-forecast`}>Weather Forecast</MenuItem>
+              <MenuItem href={`/${locale}/apps/tools/weather-report`}>Weather Report</MenuItem>
+              <MenuItem href={`/${locale}/apps/tools/plating-dates`}>Planting Dates</MenuItem>
+              <MenuItem href={`/${locale}/apps/tools/disease-tracking`}>Disease Tracking</MenuItem>
+            </SubMenu>
+            <SubMenu label={'Calculators'} icon={<i className='tabler-user' />}>
+              <MenuItem href={`/${locale}/apps/utools/yeild`}>Yeild Tools</MenuItem>
+            </SubMenu>
+          </MenuSection>
+        )}
+        {['agritex', 'supervisor', 'farmer', 'ministry', 'permsec', 'gov', 'admin', 'root', 'buyer', 'seller'].includes(
+          userType
+        ) && (
+          <MenuSection label={'Marketplace'}>
+            <SubMenu label={'Marketplace'} icon={<i className='tabler-user' />}>
+              <MenuItem href={`/${locale}/apps/marketpace`}>Marketplace</MenuItem>
+            </SubMenu>
+          </MenuSection>
+        )}
       </Menu>
       {/* <Menu
         popoutMenuOffset={{ mainAxis: 23 }}
