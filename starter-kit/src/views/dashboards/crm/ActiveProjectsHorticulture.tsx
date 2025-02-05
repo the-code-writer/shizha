@@ -22,54 +22,54 @@ type DataType = {
 const data: DataType[] = [
   {
     title: 'Manicaland',
-    subtitle: '2,447 Tonnes',
-    progress: 54,
-    progressColor: 'error',
-    imgSrc: '/images/logos/laravel.png'
+    subtitle: '3,200 Tonnes',
+    progress: 75,
+    progressColor: 'success',
+    imgSrc: '/images/logos/horticulture.png' // Update with appropriate image source
   },
   {
     title: 'Mashonaland East',
-    subtitle: '447 Tonnes',
+    subtitle: '1,800 Tonnes',
     progress: 85,
     progressColor: 'primary',
-    imgSrc: '/images/logos/figma.png'
+    imgSrc: '/images/logos/horticulture.png' // Update with appropriate image source
   },
   {
     title: 'Mashonaland West',
-    subtitle: '9,372 Tonnes',
-    progress: 64,
-    progressColor: 'success',
-    imgSrc: '/images/logos/vue.png'
+    subtitle: '4,500 Tonnes',
+    progress: 60,
+    progressColor: 'info',
+    imgSrc: '/images/logos/horticulture.png' // Update with appropriate image source
   },
   {
     title: 'Mashonaland Central',
-    subtitle: '9,382 Tonnes',
-    progress: 40,
-    progressColor: 'info',
-    imgSrc: '/images/logos/react.png'
+    subtitle: '2,900 Tonnes',
+    progress: 50,
+    progressColor: 'warning',
+    imgSrc: '/images/logos/horticulture.png' // Update with appropriate image source
   },
   {
     title: 'Midlands',
-    subtitle: '1,476 Tonnes',
-    progress: 17,
-    progressColor: 'primary',
-    imgSrc: '/images/logos/bootstrap.png'
+    subtitle: '1,200 Tonnes',
+    progress: 30,
+    progressColor: 'error',
+    imgSrc: '/images/logos/horticulture.png' // Update with appropriate image source
   },
   {
     title: 'Masvingo',
-    subtitle: '947 Tonnes',
-    progress: 30,
-    progressColor: 'warning',
-    imgSrc: '/images/logos/sketch.png'
+    subtitle: '750 Tonnes',
+    progress: 40,
+    progressColor: 'primary',
+    imgSrc: '/images/logos/horticulture.png' // Update with appropriate image source
   }
 ]
 
-const ActiveProjectsTobacco = () => {
+const ActiveProjectsHorticulture = () => {
   return (
     <Card>
       <CardHeader
-        title='Wheat Harvest for 2024 by Province'
-        subheader='Average 72% completed'
+        title='Horticulture Harvest for 2024 by Province'
+        subheader='Average 56% completed'
         action={<OptionMenu options={['Refresh', 'Update', 'Share']} />}
       />
       <CardContent className='flex flex-col gap-4'>
@@ -99,4 +99,4 @@ const ActiveProjectsTobacco = () => {
   )
 }
 
-export default ActiveProjectsTobacco
+export default ActiveProjectsHorticulture

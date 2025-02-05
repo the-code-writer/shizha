@@ -11,6 +11,13 @@ import RadarSalesChart from '@views/dashboards/crm/RadarSalesChart'
 import SalesByCountries from '@views/dashboards/crm/SalesByCountries'
 import ProjectStatus from '@views/dashboards/crm/ProjectStatus'
 import ActiveProjects from '@views/dashboards/crm/ActiveProjects'
+import ActiveProjectsTobacco from '@views/dashboards/crm/ActiveProjectsTobacco'
+import ActiveProjectsMaize from '@views/dashboards/crm/ActiveProjectsMaize'
+import ActiveProjectsWheat from '@views/dashboards/crm/ActiveProjectsWheat'
+import ActiveProjectsSugar from '@views/dashboards/crm/ActiveProjectsSugar'
+import ActiveProjectsHorticulture from '@views/dashboards/crm/ActiveProjectsHorticulture'
+import ActiveProjectsLivestock from '@views/dashboards/crm/ActiveProjectsLivestock'
+import ActiveProjectsCotton from '@views/dashboards/crm/ActiveProjectsCotton'
 
 // Server Action Imports
 //import { getServerMode } from '@core/utils/serverHelpers'
@@ -69,70 +76,70 @@ const DashboardCRM = () => {
         <h1>Tobacco</h1>
       </Grid>
       <Grid item xs={12} md={6} lg={6}>
-        <ProjectStatus />
+        <ProjectStatus name='tobacco' />
       </Grid>
       <Grid item xs={12} md={6} lg={6}>
-        <ActiveProjects />
+        <ActiveProjectsTobacco />
       </Grid>
 
       <Grid item xs={12} md={12} lg={12}>
         <h1>Maize</h1>
       </Grid>
       <Grid item xs={12} md={6} lg={6}>
-        <ProjectStatus />
+        <ProjectStatus name='maize' />
       </Grid>
       <Grid item xs={12} md={6} lg={6}>
-        <ActiveProjects />
+        <ActiveProjectsMaize />
       </Grid>
 
       <Grid item xs={12} md={12} lg={12}>
         <h1>Cotton</h1>
       </Grid>
       <Grid item xs={12} md={6} lg={6}>
-        <ProjectStatus />
+        <ProjectStatus name='cotton' />
       </Grid>
       <Grid item xs={12} md={6} lg={6}>
-        <ActiveProjects />
+        <ActiveProjectsCotton />
       </Grid>
 
       <Grid item xs={12} md={12} lg={12}>
         <h1>Wheat</h1>
       </Grid>
       <Grid item xs={12} md={6} lg={6}>
-        <ProjectStatus />
+        <ProjectStatus name='wheat' />
       </Grid>
       <Grid item xs={12} md={6} lg={6}>
-        <ActiveProjects />
+        <ActiveProjectsWheat />
       </Grid>
 
       <Grid item xs={12} md={12} lg={12}>
         <h1>Sugar</h1>
       </Grid>
       <Grid item xs={12} md={6} lg={6}>
-        <ProjectStatus />
+        <ProjectStatus name='sugar' />
       </Grid>
       <Grid item xs={12} md={6} lg={6}>
-        <ActiveProjects />
+        <ActiveProjectsSugar />
       </Grid>
 
       <Grid item xs={12} md={12} lg={12}>
         <h1>Horticulture</h1>
       </Grid>
       <Grid item xs={12} md={6} lg={6}>
-        <ProjectStatus />
+        <ProjectStatus name='horticulture' />
       </Grid>
       <Grid item xs={12} md={6} lg={6}>
-        <ActiveProjects />
+        <ActiveProjectsHorticulture />
       </Grid>
 
       <Grid item xs={12} md={12} lg={12}>
         <h1>Livestock</h1>
       </Grid>
       <Grid item xs={12} md={6} lg={6}>
-        <ProjectStatus />
+        <ProjectStatus name='livestock' />
       </Grid>
       <Grid item xs={12} md={6} lg={6}>
-        <ActiveProjects />
+        <ActiveProjectsLivestock />
       </Grid>
     </Grid>
   )

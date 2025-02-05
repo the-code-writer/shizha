@@ -22,45 +22,45 @@ type DataType = {
 const data: DataType[] = [
   {
     title: 'Manicaland',
-    subtitle: '2,447 Tonnes',
-    progress: 54,
-    progressColor: 'error',
-    imgSrc: '/images/logos/laravel.png'
+    subtitle: '50,000 Tonnes',
+    progress: 70,
+    progressColor: 'success',
+    imgSrc: '/images/logos/tobacco.png' // Update with appropriate image source
   },
   {
     title: 'Mashonaland East',
-    subtitle: '447 Tonnes',
+    subtitle: '30,000 Tonnes',
     progress: 85,
     progressColor: 'primary',
-    imgSrc: '/images/logos/figma.png'
+    imgSrc: '/images/logos/tobacco.png' // Update with appropriate image source
   },
   {
     title: 'Mashonaland West',
-    subtitle: '9,372 Tonnes',
-    progress: 64,
-    progressColor: 'success',
-    imgSrc: '/images/logos/vue.png'
+    subtitle: '60,000 Tonnes',
+    progress: 65,
+    progressColor: 'info',
+    imgSrc: '/images/logos/tobacco.png' // Update with appropriate image source
   },
   {
     title: 'Mashonaland Central',
-    subtitle: '9,382 Tonnes',
-    progress: 40,
-    progressColor: 'info',
-    imgSrc: '/images/logos/react.png'
+    subtitle: '40,000 Tonnes',
+    progress: 50,
+    progressColor: 'warning',
+    imgSrc: '/images/logos/tobacco.png' // Update with appropriate image source
   },
   {
     title: 'Midlands',
-    subtitle: '1,476 Tonnes',
-    progress: 17,
-    progressColor: 'primary',
-    imgSrc: '/images/logos/bootstrap.png'
+    subtitle: '25,000 Tonnes',
+    progress: 40,
+    progressColor: 'error',
+    imgSrc: '/images/logos/tobacco.png' // Update with appropriate image source
   },
   {
     title: 'Masvingo',
-    subtitle: '947 Tonnes',
+    subtitle: '15,000 Tonnes',
     progress: 30,
-    progressColor: 'warning',
-    imgSrc: '/images/logos/sketch.png'
+    progressColor: 'primary',
+    imgSrc: '/images/logos/tobacco.png' // Update with appropriate image source
   }
 ]
 
@@ -68,8 +68,8 @@ const ActiveProjectsTobacco = () => {
   return (
     <Card>
       <CardHeader
-        title='Wheat Harvest for 2024 by Province'
-        subheader='Average 72% completed'
+        title='Tobacco Production for 2024 by Province'
+        subheader='Average 60% completed'
         action={<OptionMenu options={['Refresh', 'Update', 'Share']} />}
       />
       <CardContent className='flex flex-col gap-4'>

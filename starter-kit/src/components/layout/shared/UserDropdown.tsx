@@ -130,7 +130,9 @@ const UserDropdown = () => {
         <Avatar
           ref={anchorRef}
           alt={''}
-          src={'/images/avatars/1.png'}
+          src={
+            'https://img.freepik.com/free-vector/bangkok-thailand-may-12-2023-caricature-tiger-woods-smilin_1308-133923.jpg'
+          }
           onClick={handleDropdownOpen}
           className='cursor-pointer bs-[38px] is-[38px]'
         />
@@ -154,7 +156,12 @@ const UserDropdown = () => {
               <ClickAwayListener onClickAway={e => handleDropdownClose(e as MouseEvent | TouchEvent)}>
                 <MenuList>
                   <div className='flex items-center plb-2 pli-6 gap-2' tabIndex={-1}>
-                    <Avatar alt={userFullname} src={'/images/avatars/1.png'} />
+                    <Avatar
+                      alt={userFullname}
+                      src={
+                        'https://img.freepik.com/free-vector/bangkok-thailand-may-12-2023-caricature-tiger-woods-smilin_1308-133923.jpg'
+                      }
+                    />
                     <div className='flex items-start flex-col'>
                       <Typography className='font-medium' color='text.primary'>
                         {userFullname}
