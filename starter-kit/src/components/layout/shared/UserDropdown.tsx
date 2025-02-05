@@ -73,6 +73,8 @@ const UserDropdown = () => {
   const handleUserLogout = async () => {
     try {
       // Sign out from the app 
+      localStorage.removeItem("user_data");
+      window.location.href = "/en/login"
     } catch (error) {
       console.error(error)
 
