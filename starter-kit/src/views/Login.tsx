@@ -160,7 +160,8 @@ const Login = ({ mode }: { mode: SystemMode }) => {
         break
       default:
         alert('Invalid username or email')
-        return
+
+      return
     }
 
     // Get the specific first and last names for the user type

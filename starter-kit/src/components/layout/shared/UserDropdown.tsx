@@ -24,13 +24,13 @@ import Button from '@mui/material/Button'
 // Third-party Imports
 
 // Type Imports
-import type { Locale } from '@configs/i18n'
+//import type { Locale } from '@configs/i18n'
 
 // Hook Imports
 import { useSettings } from '@core/hooks/useSettings'
 
 // Util Imports
-import { getLocalizedUrl } from '@/utils/i18n'
+//import { getLocalizedUrl } from '@/utils/i18n'
 
 // Styled component for badge content
 const BadgeContentSpan = styled('span')({
